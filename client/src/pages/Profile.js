@@ -37,7 +37,7 @@ function Profile({ match }) {
 
                     {currentuser._id == user._id && (
                       <Button>
-                        <Link to="/editprofile">Edit  profile</Link>
+                        <Link to="/editprofile">Edit   profile</Link>
                       </Button>
                     )}
                   </div>
@@ -48,11 +48,11 @@ function Profile({ match }) {
                 </p>
                 <div className="text-left">
                   <Button
-                 
-                  className="mr-2" onClick={()=>{setfollowersModalDisplay(true)}} >
+
+                    className="mr-2" onClick={() => { setfollowersModalDisplay(true) }} >
                     Followers : {user.followers.length}
                   </Button>
-                  <Button onClick={()=>{setfollowingModalDisplay(true)}} >Following : {user.following.length}</Button>
+                  <Button onClick={() => { setfollowingModalDisplay(true) }} >Following : {user.following.length}</Button>
                 </div>
 
                 <p style={{ color: "black", fontSize: 16 }}>
@@ -63,8 +63,8 @@ function Profile({ match }) {
           </Row>
 
           {user.followers.find((obj) => obj == currentuser._id) ||
-          user.privateAccount == false ||
-          user._id == currentuser._id ? (
+            user.privateAccount == false ||
+            user._id == currentuser._id ? (
             <Row gutter={16} justify="center">
               {usersposts.map((post) => {
                 return (
@@ -86,7 +86,7 @@ function Profile({ match }) {
             onCancel={() => {
               setfollowersModalDisplay(false);
             }}
-            onOk={()=>{
+            onOk={() => {
               setfollowersModalDisplay(false);
             }}
           >
@@ -109,15 +109,15 @@ function Profile({ match }) {
                   )}
 
                   <div className='ml-2'>
-                      <div style={{ margin : 2}}><Link>{followeruser.username}</Link></div>
-                      <div style={{ margin : 2}}>Since {moment(followeruser.createdAt).format('MMM DD yyyy')}</div>
+                    <div style={{ margin: 2 }}><Link>{followeruser.username}</Link></div>
+                    <div style={{ margin: 2 }}>Since {moment(followeruser.createdAt).format('MMM DD yyyy')}</div>
                   </div>
                 </div>
               );
             })}
           </Modal>
-       
-          
+
+
           <Modal
             title="Following"
             visible={followingModalDisplay}
@@ -125,7 +125,7 @@ function Profile({ match }) {
             onCancel={() => {
               setfollowingModalDisplay(false);
             }}
-            onOk={()=>{
+            onOk={() => {
               setfollowingModalDisplay(false);
             }}
           >
@@ -148,16 +148,16 @@ function Profile({ match }) {
                   )}
 
                   <div className='ml-2'>
-                      <div style={{ margin : 2}}><Link>{followinguser.username}</Link></div>
-                      <div style={{ margin : 2}}>Since {moment(followinguser.createdAt).format('MMM DD yyyy')}</div>
+                    <div style={{ margin: 2 }}><Link>{followinguser.username}</Link></div>
+                    <div style={{ margin: 2 }}>Since {moment(followinguser.createdAt).format('MMM DD yyyy')}</div>
                   </div>
                 </div>
               );
             })}
           </Modal>
-       
-       
-       
+
+
+
         </>
       )}
     </DefaultLayout>
