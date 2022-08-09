@@ -37,7 +37,7 @@ function Profile({ match }) {
 
                     {currentuser._id == user._id && (
                       <Button>
-                        <Link to="/editprofile">Edit profile</Link>
+                        <Link to="/editprofile">Edit  profile</Link>
                       </Button>
                     )}
                   </div>
